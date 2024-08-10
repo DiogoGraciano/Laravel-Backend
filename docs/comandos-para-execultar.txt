@@ -15,3 +15,5 @@ CREATE DATABASE laravel;
 exit;
 
 exit;
+
+sudo chmod 777 -R src
