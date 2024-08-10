@@ -1,0 +1,47 @@
+services:
+  nginx:
+    build: ./docker/nginx
+    ports:
+      - '80:80'
+    volumes:
+      - './src:/var/www'
+      - './docker/nginx/templates:/etc/nginx/templates'
+    depends_on:
+      - php
+      - postgres
+    networks:
+          - laravel
+  php:
+    build: ./docker/php
+    volumes:
+      - './src:/var/www'
+      - './docker/log/php:/var/log/'
+    depends_on:
+      - postgres
+    networks:
+            - laravel
+  postgres:
+    image: 'postgres:16.4-bullseye'
+    ports:
+      - '5432:5432'
+    environment:
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - '/var/lib/postgresql/data'
+      - './docker/log/postgres:/var/log/'
+      - './docker/postgres/sql:/docker-entrypoint-initdb.d'
+    networks:
+      - laravel
+  adminer:
+    image: adminer
+    ports:
+      - 8080:8080
+  redis:
+      image: redis:latest
+      networks:
+          - laravel
+volumes:
+  pgdata: null
+networks:
+    laravel:
+        driver: bridge

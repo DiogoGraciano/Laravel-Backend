@@ -1,0 +1,17 @@
+docker-compose up --build -d
+
+docker-compose exec php bash
+
+composer install
+
+exit;
+
+docker-compose exec postgres bash
+
+psql -d postgres -U postgres
+
+CREATE DATABASE laravel;
+
+exit;
+
+exit;
