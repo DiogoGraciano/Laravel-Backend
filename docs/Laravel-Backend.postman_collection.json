@@ -36,7 +36,158 @@
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Retorno 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dsEstrategia\": \"RETIRA\",\r\n    \"nrPrioridade\": 10,\r\n    \"horarios\": [\r\n        {\r\n            \"dsHorarioInicio\": \"09:00\",\r\n            \"dsHorarioFinal\": \"10:00\",\r\n            \"nrPrioridade\": 40\r\n        },\r\n        {\r\n            \"dsHorarioInicio\": \"10:01\",\r\n            \"dsHorarioFinal\": \"11:00\",\r\n            \"nrPrioridade\": 30\r\n        },\r\n        {\r\n            \"dsHorarioInicio\": \"11:01\",\r\n            \"dsHorarioFinal\": \"12:00\",\r\n            \"nrPrioridade\": 20\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/estrategiaWMS/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"estrategiaWMS",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Aug 2024 23:57:57 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "58"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"return\": true\n}"
+				},
+				{
+					"name": "Retorno 400",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dsEstrategia\": \"RETIRA\",\r\n\r\n    \"horarios\": [\r\n        {\r\n            \"dsHorarioInicio\": \"09:00\",\r\n            \"dsHorarioFinal\": \"10:00\",\r\n            \"nrPrioridade\": 40\r\n        },\r\n        {\r\n            \"dsHorarioInicio\": \"10:01\",\r\n            \"dsHorarioFinal\": \"11:00\",\r\n            \"nrPrioridade\": 30\r\n        },\r\n        {\r\n            \"dsHorarioInicio\": \"11:01\",\r\n            \"dsHorarioFinal\": \"12:00\",\r\n            \"nrPrioridade\": 20\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/estrategiaWMS/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"estrategiaWMS",
+								""
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 00:01:24 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Não foi possivel execultar essa ação\"\n}"
+				}
+			]
 		},
 		{
 			"name": "http://localhost/api/estrategiaWMS/5/11/30/prioridade",
@@ -44,7 +195,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost/api/estrategiaWMS/5/11/30/prioridade",
+					"raw": "http://localhost/api/estrategiaWMS/10/9/00/prioridade",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -52,14 +203,231 @@
 					"path": [
 						"api",
 						"estrategiaWMS",
-						"5",
-						"11",
-						"30",
+						"10",
+						"9",
+						"00",
 						"prioridade"
 					]
 				}
 			},
-			"response": []
+			"response": [
+				{
+					"name": "Retorno 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/estrategiaWMS/9/9/00/prioridade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"estrategiaWMS",
+								"9",
+								"9",
+								"00",
+								"prioridade"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Aug 2024 23:51:13 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"prioridade\": 40\n}"
+				},
+				{
+					"name": "Retorno 400",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/estrategiaWMS/10/9/00/prioridade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"estrategiaWMS",
+								"10",
+								"9",
+								"00",
+								"prioridade"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 11 Aug 2024 00:01:24 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "57"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Não foi possivel execultar essa ação\"\n}"
+				},
+				{
+					"name": "Retorno 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost/api/estrategiaWMS/10/9/00/prioridade",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"estrategiaWMS",
+								"10",
+								"9",
+								"00",
+								"prioridade"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.27.0"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/8.3.10"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, private"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 10 Aug 2024 23:57:26 GMT"
+						},
+						{
+							"key": "X-RateLimit-Limit",
+							"value": "60"
+						},
+						{
+							"key": "X-RateLimit-Remaining",
+							"value": "59"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"error\": \"Estratégia não encontrada\"\n}"
+				}
+			]
 		}
 	]
 }
