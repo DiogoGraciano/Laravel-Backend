@@ -45,7 +45,7 @@ class EstrategiaWMS extends Controller
             }
     
         } catch (\Exception $e) {
-            return response()->json(["error" => "Não foi possivel execultar essa ação ".$e->getMessage()],400);
+            return response()->json(["error" => "Não foi possivel execultar essa ação"],400);
         }
        
         return response()->json(["return" => true],200);
@@ -84,7 +84,7 @@ class EstrategiaWMS extends Controller
             return response()->json(['prioridade' => $estrategia->nr_prioridade]);
 
         } catch (\Exception $e) {
-            return response()->json(["error" => "Não foi possivel execultar essa ação ".$e->getMessage()],400);
+            return response()->json(["error" => "Não foi possivel execultar essa ação"],400);
         }
     }
 }
